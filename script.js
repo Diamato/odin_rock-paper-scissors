@@ -63,4 +63,4 @@ function game() {
   const compChoice = computerInput();
   console.log(winner(playerChoice, compChoice));
 }
-game();
+// game();
