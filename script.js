@@ -5,37 +5,70 @@
   4. заменить все console.log на методы Dom
   5. сделать таблицу счета (игра из пяти раундов)
 */
+// let
+let userRock = document.querySelector(".rock");
+let userPaper = document.querySelector(".paper");
+let userScissor = document.querySelector(".scissor");
+let userChoice;
+// ui variables
+const PLAYER_BILL = document.querySelector(".player-bill");
+const COMPUTER_BILL = document.querySelector(".computer-bill");
 //const
+// const BTN = document.querySelector(".btn");
 const ROCK = "ROCK";
 const PAPER = "PAPER";
 const SCISSORS = "SCISSORS";
 const DRAW = "Draw";
 const PLAYER_WON = "You are win!";
 const COMPUTER_WON = "Computer has won!";
-// functions
+
+// addEventListener
+userRock.addEventListener("click", function () {
+  userChoice = ROCK;
+  return userChoice;
+});
+userPaper.addEventListener("click", function () {
+  userChoice = PAPER;
+  return userChoice;
+});
+userScissor.addEventListener("click", function () {
+  userChoice = SCISSORS;
+  return userChoice;
+});
+//// functions
 // get user choice
-function getInput() {
-  let result;
-  let userInput = prompt(
-    "Please, make your choice: Rock, Paper or Scissor",
-    ""
-  );
-  if (userInput) {
-    userInput = userInput.toUpperCase();
-    if (userInput === ROCK || userInput === PAPER || userInput === SCISSORS) {
-      result = userInput;
-    } else {
-      alert("We've made a choice for you! It's Rock!");
-      result = ROCK;
-    }
-  } else {
-    alert("We've made a choice for you! It's Scissors!");
-    result = SCISSORS;
-  }
-  console.log("-----------------");
-  console.log(`You've selected ${result}!`);
-  return result;
-}
+// function getUserChoice(value) {
+//   if (value === 0) {
+//     userChoice = ROCK;
+//     return userChoice;
+//   } else if (value === 1) {
+//     userChoice = PAPER;
+//     return userChoice;
+//   } else if (value === 2) {
+//     userChoice = SCISSORS;
+//     return userChoice;
+//   }
+// }
+//
+// function getInput() {
+//   let result;
+//   let userInput = userChoice;
+//   if (userInput) {
+//     userInput = userInput.toUpperCase();
+//     if (userInput === ROCK || userInput === PAPER || userInput === SCISSORS) {
+//       result = userInput;
+//     } else {
+//       alert("We've made a choice for you! It's Rock!");
+//       result = ROCK;
+//     }
+//   } else {
+//     alert("We've made a choice for you! It's Scissors!");
+//     result = SCISSORS;
+//   }
+//   console.log("-----------------");
+//   console.log(`You've selected ${result}!`);
+//   return result;
+// }
 // get computer choice
 function computerInput() {
   let result = null;
@@ -45,8 +78,8 @@ function computerInput() {
   } else if (computerChoice < 0.68) {
     result = SCISSORS;
   } else result = PAPER;
-  console.log("-----------------");
-  console.log(`Computer selected ${result}!`);
+  // console.log("-----------------");
+  // console.log(`Computer selected ${result}!`);
   return result;
 }
 
@@ -66,8 +99,8 @@ function winner(playerChoice, compChoice) {
 
 // function game
 function game() {
-  const playerChoice = getInput();
+  const playerChoice = userChoice;
   const compChoice = computerInput();
   console.log(winner(playerChoice, compChoice));
 }
-// game();
+game();
