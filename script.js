@@ -1,3 +1,8 @@
+// variables
+const gameDiv = document.querySelector("#game");
+const resultDiv = document.querySelector("#result");
+const buttons = document.querySelectorAll("button");
+
 // get computer choice
 function computerPlay() {
   const options = ["rock", "scissors", "paper"];
@@ -20,21 +25,18 @@ function playRound(playerSelection, computerSelection) {
 }
 // функция обновления интерфейса
 function updateGame(playerSelection, computerSelection, result) {
-  const gameDiv = document.querySelector("#game");
-  const resultDiv = document.querySelector("#result");
-  gameDiv.style.display = "none";
   resultDiv.innerHTML = `You're choice: ${playerSelection}, 
   computer has choice: ${computerSelection}. ${result}`;
   const playAgainButton = document.createElement("button");
   playAgainButton.textContent = "Play Again";
+  playAgainButton.style.display = "block";
+  playAgainButton.style.margin = "20px auto";
   playAgainButton.addEventListener("click", () => {
-    gameDiv.style.display = "block";
     resultDiv.innerHTML = "";
   });
   resultDiv.appendChild(playAgainButton);
 }
 // привязываем функции к кнопкам
-const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const playerSelection = button.id;
