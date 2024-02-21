@@ -1,41 +1,26 @@
 /* reset css */
 @import url("reset.css");
-#game {
-  width: 80%;
-  height: 60%;
-  margin: 0 auto;
-  background-color: #45af6a;
-  color: #fdd;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+h1 {
+  color: #333;
+  font-size: 50px;
+  margin-top: 30px;
 }
 
-.container {
-  padding: 10px;
-  text-align: center;
-  margin: 0 auto;
+#game {
+  margin-top: 20px;
 }
-.message {
-  font-size: 30px;
-  padding-bottom: 10px;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
 }
-.buttons {
-  margin: 30px;
-}
-.btn {
-  padding: 10px 15px;
-  font-size: 20px;
-  border-radius: 10%;
-}
-.btn:not(:last-child) {
-  margin-right: 20px;
-}
-.bill {
-  font-size: 25px;
-  margin-bottom: 30px;
-}
-.bill p {
-  margin-bottom: 20px;
-}
-.bill span {
-  font-size: 40px;
-  padding: 10px;
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
 }
